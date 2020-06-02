@@ -1,0 +1,34 @@
+[package]
+name = "statehub"
+version = "0.1.0"
+authors = [
+    "Fredrik Stave <fredrikstave@me.com>",
+    "Ole Fredrik Skudsvik <ole.skudsvik@gmail.com>"
+]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bson = "0.14.1"
+criterion = "0.3" # For benchmarks
+crossbeam = "0.7"
+dotenv = "0.15.0"
+rocket = "0.4.4"
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+
+[dependencies.mongodb]
+version = "0.10.0"
+default-features = false
+features = ["sync"]
+
+[dependencies.rocket_contrib]
+version = "0.4.4"
+default-features = false
+features = ["json"]
+
+[[bench]]
+name = "statehub_benchmark"
+harness = false
